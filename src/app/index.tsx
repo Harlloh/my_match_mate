@@ -77,11 +77,13 @@ export default function HomeFeatures() {
                     Next
                 </Button>
                     :
-                    <Link href="/signup" passHref>
-                        <Button className="w-full mb-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white">
-                            Get Started
-                        </Button>
-                    </Link>
+                    // <Link href="/signup" passHref>
+                    //     <Button className="w-full mb-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white">
+                    //         Get Started
+                    //     </Button>
+                    // </Link>
+                    <Link className="w-full mb-2 bg-[var(--color-primary)]     hover:bg-[var(--color-primary-hover)] text-white"
+                        href={'/signup'}>Get Started</Link>
                 }
 
                 <div className="flex justify-center gap-1 text-sm">
