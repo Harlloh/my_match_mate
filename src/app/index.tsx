@@ -12,8 +12,8 @@ interface Feature {
 }
 export default function HomeFeatures() {
     const [activeSlide, setActiveSlide] = useState(0)
-    let signUpPage
-    const router = useRouter()
+    // let signUpPage
+    // const router = useRouter()
     const welcomePageFeatures: Feature[] = [
         {
             title: 'Matches updates',
@@ -36,10 +36,11 @@ export default function HomeFeatures() {
         //if not the last slide, increment, else route to sign up page or if active slide is equals to the features length route, else increment
         if (activeSlide < welcomePageFeatures.length - 1) {
             setActiveSlide((prev) => prev + 1);
-        } else {
-            signUpPage = true
-            // router.push("/signup");
         }
+        // else {
+        //     // signUpPage = true
+        //     // router.push("/signup");
+        // }
     };
 
 
