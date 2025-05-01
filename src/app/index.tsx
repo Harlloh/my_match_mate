@@ -12,6 +12,7 @@ interface Feature {
 }
 export default function HomeFeatures() {
     const [activeSlide, setActiveSlide] = useState(0)
+    let signUpPage
     const router = useRouter()
     const welcomePageFeatures: Feature[] = [
         {
@@ -36,7 +37,8 @@ export default function HomeFeatures() {
         if (activeSlide < welcomePageFeatures.length - 1) {
             setActiveSlide((prev) => prev + 1);
         } else {
-            router.push("/signup");
+            signUpPage = true
+            // router.push("/signup");
         }
     };
 
@@ -68,14 +70,19 @@ export default function HomeFeatures() {
             </div>
 
             <div className="w-full max-w-md">
-                <Button
+                {activeSlide < welcomePageFeatures.length - 1 ? <Button
                     onClick={handleNext}
                     className="w-full mb-2 bg-[var(--color-primary)]     hover:bg-[var(--color-primary-hover)] text-white"
                 >
-                    {activeSlide < welcomePageFeatures.length - 1
-                        ? "Next"
-                        : "Get Started"}
+                    Next
                 </Button>
+                    :
+                    <Link href="/signup" passHref>
+                        <Button className="w-full mb-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white">
+                            Get Started
+                        </Button>
+                    </Link>
+                }
 
                 <div className="flex justify-center gap-1 text-sm">
                     <span className="text-muted-foreground">
