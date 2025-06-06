@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Heart, Bell } from "lucide-react";
 import Link from "next/link";
-// import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 interface Feature {
@@ -12,8 +11,7 @@ interface Feature {
 }
 export default function HomeFeatures() {
     const [activeSlide, setActiveSlide] = useState(0)
-    // let signUpPage
-    // const router = useRouter()
+
     const welcomePageFeatures: Feature[] = [
         {
             title: 'Matches updates',
@@ -37,10 +35,6 @@ export default function HomeFeatures() {
         if (activeSlide < welcomePageFeatures.length - 1) {
             setActiveSlide((prev) => prev + 1);
         }
-        // else {
-        //     // signUpPage = true
-        //     // router.push("/signup");
-        // }
     };
 
 
@@ -48,7 +42,7 @@ export default function HomeFeatures() {
 
     return (
 
-        <div className="flex-col items-center gap-9 px-4">
+        <div className="flex-col items-center gap-18 px-4">
             <div>
 
                 <div className="flex-col gap-2 justify-center items-center  mb-3">
@@ -78,13 +72,11 @@ export default function HomeFeatures() {
                     Next
                 </Button>
                     :
-                    // <Link href="/signup" passHref>
-                    //     <Button className="w-full mb-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white">
-                    //         Get Started
-                    //     </Button>
-                    // </Link>
-                    <Link className="w-full mb-2 bg-[var(--color-primary)]     hover:bg-[var(--color-primary-hover)] text-white"
-                        href={'/signup'}>Get Started</Link>
+                    <Link href="/signup" passHref>
+                        <Button className="w-full mb-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white">
+                            Get Started
+                        </Button>
+                    </Link>
                 }
 
                 <div className="flex justify-center gap-1 text-sm">
